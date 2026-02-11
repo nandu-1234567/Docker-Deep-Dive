@@ -4,32 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Docker Deep Dive</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    h1, h2 {
-      color: #007acc;
-    }
-    code {
-      background-color: #eaeaea;
-      padding: 2px 4px;
-      border-radius: 4px;
-    }
-    pre {
-      background-color: #eaeaea;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    ul {
-      margin-bottom: 20px;
-    }
-  </style>
+  
+  
 </head>
 <body>
   <h1>Docker Deep Dive</h1>
@@ -131,30 +107,6 @@ docker run -v my-data:/var/lib/postgresql/data postgres
 
   <h2>8. Docker Compose</h2>
   <p>Docker Compose allows running multi-container apps easily:</p>
-  <pre>
-version: "3.9"
-services:
-  web:
-    image: nginx
-    ports:
-      - "80:80"
-    networks:
-      - app-net
-  db:
-    image: postgres
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: mydb
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - app-net
-volumes:
-  db-data:
-networks:
-  app-net:
-  </pre>
-
+ p
 </body>
 </html>
