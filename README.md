@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docker Deep Dive</title>
+  
   
   
 </head>
@@ -106,7 +106,7 @@ docker run -v my-data:/var/lib/postgresql/data postgres
   </pre>
 
   <h2>8. Docker Compose</h2>
-  <p>Docker Compose allows running multi-container apps easily:</p>
- p
+  <p>Docker Compose allows running multi-container apps easily</p>
+ 
 </body>
 </html>
