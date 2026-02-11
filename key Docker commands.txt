@@ -1,0 +1,55 @@
+1.Docker Version & Info :
+  * docker version → Show Docker client and server version.
+  * docker info → Display system-wide information about Docker.
+
+2.Docker Images :
+  * docker pull <image> → Download an image from Docker Hub.
+  * docker build -t <name> . → Build an image from a Dockerfile.
+  * docker images → List all downloaded images.
+  * docker rmi <image> → Remove a specific image.
+  * docker tag <image> <name:tag> → Tag an image.
+  * docker push <image> → Upload image to a registry.
+
+3.Docker Containers : 
+  * docker run <image> → Create and start a new container.
+  * docker ps → List running containers. 
+  * docker ps -a → List all containers (running + stopped).
+  * docker stop <container> → Stop a running container.
+  * docker start <container> → Start a stopped container.
+  * docker restart <container> → Restart a container.
+  * docker rm <container> → Remove a container.
+  * docker exec -it <container> /bin/bash → Open shell inside a running container.
+  * docker attach <container> → Attach to a running container’s terminal.
+
+4.Docker Logs & Inspect : 
+  * docker logs <container> → Show container logs.
+  * docker inspect <container> → Detailed information about a container.
+  * docker stats → Real-time resource usage of containers.
+  * docker top <container> → Processes running inside a container.
+
+5.Docker Volumes :
+  * docker volume create <name> → Create a volume.
+  * docker volume ls → List all volumes.
+  * docker volume inspect <volume> → Detailed info about a volume.
+  * docker volume rm <volume> → Remove a volume.
+
+6. Docker Networks :
+  * docker network create <name> → Create a network.
+  * docker network ls → List all networks.
+  * docker network inspect <network> → Detailed info about a network.
+  * docker network rm <network> → Remove a network.
+
+7. System Cleanup & Management :
+  * docker system prune → Remove unused containers, images, networks, and volumes.
+  * docker container prune → Remove stopped containers.
+  * docker image prune → Remove unused images.
+  * docker volume prune → Remove unused volumes.
+  * docker network prune → Remove unused networks.
+
+8. Docker Compose (if installed) :
+  * docker-compose up → Start multi-container applications.
+  * docker-compose up -d → Start containers in detached mode.
+  * docker-compose down → Stop and remove containers created by Compose.
+  * docker-compose logs → View logs of all services.
+  * docker-compose build → Build images defined in docker-compose.yml.
+

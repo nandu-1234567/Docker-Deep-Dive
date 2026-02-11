@@ -1,0 +1,47 @@
+DOCKER ARCHITECTURE : WHAT GETS INSTALLED WHEN DOCKER IS INSTALLED?
+ * Docker architecture is client-server based and consists of several key components that work together to build, ship, and run applications in containers.
+
+Docker Engine :
+  * Core component that runs and manages containers.
+  * Includes:
+     * Docker Daemon (dockerd) – background service that handles container lifecycle.
+     * REST API – allows programs to communicate with Docker Daemon.
+     * Docker CLI (docker) – command-line tool to interact with Docker.
+
+1.Docker Client :
+  * The interface you use to interact with Docker (docker run, docker build, etc.).
+  * Sends commands to the Docker Daemon.
+  * Can run on the same host or remotely.
+
+2.Docker Daemon (docker d) :
+  * The background service that does all the heavy lifting.  
+  * Responsible for building, running, and managing containers and images.
+  * Listens for requests from the Docker Client. 
+
+3.Docker Images :
+  * Read-only templates used to create containers.
+  * Can be pulled from Docker Hub (public registry) or a private registry.
+  * Contains the application code, libraries, and dependencies needed to run.
+
+4.Docker Containers :
+  * Running instances of Docker images.
+  * Lightweight and isolated environments for applications.
+  * Share the host OS kernel but run independently.
+
+5.Docker Registry :
+  * Storage for Docker images.
+  * Docker Hub is a popular public registry.
+  * Private registries can be used to store images internally.
+
+6.Docker Compose :
+  * Tool to define and manage multi-container applications using a YAML file.
+  * Allows running multiple interconnected containers as a single service.
+  
+
+Docker Workflow :
+   1. Client sends command.
+   2. Daemon executes the command.
+   3. Images are pulled from the Registry if needed.
+   4. Containers are created and run.
+   5. Containers communicate via networks and can persist data in volumes.
+

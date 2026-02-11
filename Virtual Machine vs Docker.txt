@@ -1,0 +1,81 @@
+VIRTUAL MACHINE :
+  * A Virtual Machine (VM) is a software-based computer that runs like a real physical computer.
+  * It has its own operating system and applications, but it runs on top of another computer (called the host) using virtualized hardware.
+
+1.Components:
+   * Hypervisor: Software that creates and manages VMs.
+     * Type 1: Runs directly on hardware (bare-metal).
+     * Type 2: Runs on an existing OS (hosted).
+   * Guest OS: The operating system inside the VM.
+   * Virtual Hardware: Simulated CPU, memory, storage, and network.
+
+2.Advantages of VM :
+   1.Run multiple OS on one physical computer.
+   2.Isolation – one VM doesn’t affect others.
+   3.Easy to backup, copy, or restore.
+   4.Good for testing and learning safely.
+
+3.Disadvantages of VM :
+   1.Slower than a real computer (performance overhead).
+   2.Uses a lot of resources – CPU, RAM, storage.
+   3.Requires hypervisor software.
+
+4.Usecases :
+  1.Running Multiple Operating Systems
+  2.Software Testing and Development
+  3.Server Consolidation
+  4.Disaster Recovery and Backup
+  5.Learning and Training
+  6.Cloud Computing
+  7.Running Legacy Applications
+  8.Isolation & Security
+  9.Temporary Environments
+ 10.Resource Optimization
+
+
+DOCKER :
+  * Docker is a platform that lets you package an application and all its dependencies into a single container, so it can run anywhere consistently.
+
+1.Components :
+   * Docker Engine – Core software that runs and manages containers.
+   * Docker Images – Read-only templates used to create containers.
+   * Docker Containers – Running instances of images, isolated environments for apps.
+   * Docker Registry – Storage and distribution system for images (e.g., Docker Hub).
+   * Dockerfile – Text file with instructions to build Docker images.
+   * Docker Compose – Tool to run multi-container applications using a YAML file.
+   * Docker Volumes – Persistent storage for containers.
+   * Docker Network – Allows containers to communicate with each other or external systems.
+
+2.Advantages of Docker :
+   1.Runs the same way on any system.
+   2.Starts quickly and uses fewer resources than VMs.
+   3.Easy to run many containers for apps.
+   4.Keeps apps and dependencies separate.
+   5.run on laptops, servers, or cloud without changes.
+
+3.Disadvantages of Docker :
+  1.Linux containers work best; Windows containers have limitations.
+  2.Setting up communication between containers can be tricky.
+  3.Doesn’t virtualize hardware, so some workloads may need VMs.
+  4.Beginners may find Docker commands and concepts confusing.
+
+4.Usecases :
+  1.Run multiple small apps in isolated containers (microservices).
+  2.Create consistent development and testing environments.
+  3.Automate app building, testing, and deployment (CI/CD).
+  4.Run scalable apps on cloud platforms.
+  5.Package old apps to run on modern systems (legacy apps).
+  6.Test new software without affecting your main system.
+
+DOCKER vs VM :
+    Feature	                 Docker	                               Virtual Machine (VM)
+    Technology	                 Containers	                       Full virtual machines
+    OS	                         Shares host OS kernel	               Each VM has its own OS
+    Resource Usage	         Lightweight, uses less CPU/RAM	       Heavy, uses more CPU/RAM
+    Startup Time	         Fast (seconds)	                       Slow (minutes)
+    Isolation	                 Process-level	                       Full isolation
+    Image Size	                 Small                                 Large
+    Use Case                   	 Microservices,app deployment,cloud    Multiple OS, legacy apps, full server environments
+    Portability	                 High	                               Moderate
+    Performance    	         Near-native	                       Slightly slower due to overhead
+

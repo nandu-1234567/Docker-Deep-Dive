@@ -1,0 +1,102 @@
+What is Docker Compose?
+ * Docker Compose is a tool to define and run multi-container Docker applications.
+ * Instead of running multiple docker run commands, you can define all your containers, networks, and volumes in a single YAML file (usually docker-compose.yml).
+ * It makes managing multiple services (like a web server + database) much easier.
+
+Key Features :
+ * Define services (containers) in one file.
+ * Automatically set up networks and volumes.
+ * Start all containers with a single command:
+     docker compose up
+ * Stop and remove containers with:
+     docker compose down
+
+Key Terms in Docker Compose :
+   1.Service
+     * A service is a container or a set of containers that perform a function in your application.
+     * Example: web service runs Nginx, db service runs PostgreSQL.
+     * Defined in the YAML file under services:.
+   2.Image
+     * A Docker image is a blueprint for a container.
+     * It contains the code, runtime, libraries, and dependencies needed to run a service.
+     * Example: nginx, postgres.
+   3.Container
+     * A container is a running instance of an image.
+     * Think of it as a “live app” running in an isolated environment.
+     * Docker Compose creates containers automatically from the services’ images.
+   4.Ports
+     * Mapping ports lets your container communicate with the host machine.
+     * Syntax: "host_port:container_port"
+     * Example: "80:80" means external users can access the container’s port 80 via host’s port 80.
+   5.Environment Variables
+     * Variables passed to a container to configure it.
+     * Example: POSTGRES_USER, POSTGRES_PASSWORD for a database.
+     * Helps avoid hardcoding sensitive information like passwords.
+   6.Volumes
+     * A volume is a persistent storage outside the container.
+     * Containers are ephemeral—if deleted, all data inside is lost.
+     * Volumes keep your data safe even if containers are removed.
+   7.Networks
+     * Docker creates networks so containers can communicate with each other.
+     * Each service can connect to a network by name.
+     * Example: a web container can talk to a db container over a network.
+   8.docker-compose.yml
+     * The YAML file where you define all your services, volumes, and networks.
+      Example :
+         version: "3.9"  # Compose file version
+         services:
+            web:                 # Service name
+              image: nginx       # Docker image for the service
+              ports:
+                - "80:80"        # Map host port 80 to container port 80
+              networks:
+                - app-network    # Connect this service to the network
+
+            db:
+             image: postgres    # Docker image for PostgreSQL
+             environment:       # Environment variables for DB configuration
+               POSTGRES_USER: myuser
+               POSTGRES_PASSWORD: mypassword
+               POSTGRES_DB: mydb
+            volumes:
+             - db-data:/var/lib/postgresql/data  # Persist DB data
+            networks:
+             - app-network
+
+            volumes:
+              db-data:            # Define persistent storage for the database
+
+            networks:
+              app-network:        # User-defined network so web and db can communicate
+
+
+Commands to Run This Compose File :
+   * docker compose up         # Start all services
+   * docker compose up -d      # Start all services in background
+   * docker compose ps         # See running containers
+   * docker compose logs web   # View logs for web service
+   * docker compose down       # Stop and remove containers, network, volumes
+
+
+Docker Compose Workflow :
+  1.Write YAML file
+     * Define all services (containers), ports, volumes, and networks in docker-compose.yml.
+  2.Start containers
+     Run:
+       docker compose up -d
+     * Docker Compose pulls/builds images, creates containers, sets up network & volumes.
+  3.Containers run & communicate
+     * Services automatically connect via the network.
+     * Example: Web service can reach DB service using its name.
+  4.Check status / logs
+     * Check running containers:
+         docker compose ps
+
+     * See logs:
+         docker compose logs
+
+  5.Stop & clean up
+     * Stop containers:
+         docker compose stop
+     * Stop & remove containers, network, volumes:
+         docker compose down

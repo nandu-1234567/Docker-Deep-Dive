@@ -1,0 +1,43 @@
+DOCKER VOLUME :
+
+What is a Docker Volume?
+  * A Docker Volume is a storage mechanism that allows data to be stored outside a container.
+  * It provides persistent data storage, meaning data remains even if the container is deleted or recreated.
+  * Volumes are managed by Docker, making them easy to backup, share, and migrate.
+
+Why Use Docker Volumes?
+  * Containers are ephemeral: any data inside the container is lost when it stops or is removed.
+  * Volumes help keep important data safe like databases, logs, or configuration files.
+  * Can be shared between multiple containers.
+
+Types of Docker Volumes
+  1.Named Volumes – Managed by Docker, stored in /var/lib/docker/volumes/.
+  2.Bind Mounts – Maps a directory from the host machine to the container.
+  3.tmpfs Volumes – Stores data in RAM; temporary and lost when container stops.
+ 
+
+Key Commands
+  * docker volume create myvolume → Create a new volume.
+  * docker volume ls → List all volumes.
+  * docker volume inspect myvolume → View details of a volume.
+  * docker volume rm myvolume → Remove a volume.
+  * docker run -v myvolume:/data myimage → Attach a volume to a container.
+
+
+PERSISTENCE :
+
+What is Persistence?
+  * Persistence means keeping data safe and available even if a container stops, crashes, or is deleted.
+  * By default, data inside a Docker container is ephemeral (temporary) and disappears when the container is removed.
+  * Persistence ensures that important data (like databases, logs, configs) is not lost.
+
+How Persistence is Achieved
+  1.Docker Volumes – Preferred method for persistent storage.
+  2.Bind Mounts – Map a directory from the host machine to the container.
+  3.External Storage – Store data outside Docker, e.g., cloud storage or database servers.
+
+Example :
+    docker volume create myvolume
+    docker run -v myvolume:/data myimage
+ * Data written to /data inside the container will persist in myvolume, even if the container is deleted.
+

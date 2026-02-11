@@ -1,0 +1,81 @@
+1.What is Docker?
+   * Docker is a containerization platform that packages applications and all their dependencies into containers.
+   * Containers are lightweight, portable, and isolated, unlike virtual machines that require a full OS.
+
+2.Docker Components :
+Docker Engine :
+  * Core component that runs and manages containers.
+  * Includes:
+     * Docker Daemon (dockerd) – background service that handles container lifecycle.
+     * REST API – allows programs to communicate with Docker Daemon.
+     * Docker CLI (docker) – command-line tool to interact with Docker.
+
+ 1.Docker Client :
+  * The interface you use to interact with Docker (docker run, docker build, etc.).
+  * Sends commands to the Docker Daemon.
+  * Can run on the same host or remotely.
+
+ 2.Docker Daemon (docker d) :
+  * The background service that does all the heavy lifting.  
+  * Responsible for building, running, and managing containers and images.
+  * Listens for requests from the Docker Client. 
+
+ 3.Docker Images :
+  * Read-only templates used to create containers.
+  * Can be pulled from Docker Hub (public registry) or a private registry.
+  * Contains the application code, libraries, and dependencies needed to run.
+
+ 4.Docker Containers :
+  * Running instances of Docker images.
+  * Lightweight and isolated environments for applications.
+  * Share the host OS kernel but run independently.
+
+ 5.Docker Registry :
+  * Storage for Docker images.
+  * Docker Hub is a popular public registry.
+  * Private registries can be used to store images internally.
+
+ 6.Docker Compose :
+  * Tool to define and manage multi-container applications using a YAML file.
+  * Allows running multiple interconnected containers as a single service.
+ 
+ 7.Docker Volumes :
+  * Persistent storage to save container data outside the container lifecycle.
+ 
+ 8.Docker Network :
+  * Connect containers so they can communicate with each other or external systems.
+
+3.Docker Architecture :
+  * Client-Server Architecture:
+     * Docker CLI (Client) → sends commands → Docker Daemon (Server) → manages containers/images.
+     * Images pulled from Registry → used to create Containers.
+  * Containers run isolated processes sharing the host OS kernel, making them fast and lightweight.
+
+4.Workflow of Docker:
+  1.Write a Dockerfile – instructions to build an image.
+  2.Build Docker Image using docker build.
+  3.Run Container from the image using docker run.
+  4.Manage containers (start, stop, delete) using Docker CLI or Daemon.
+  5.Push or pull images to/from Docker Registry.
+
+5.Advantages of Docker :
+   1.Runs the same way on any system.
+   2.Starts quickly and uses fewer resources than VMs.
+   3.Easy to run many containers for apps.
+   4.Keeps apps and dependencies separate.
+   5.run on laptops, servers, or cloud without changes.
+
+6.Disadvantages of Docker :
+  1.Linux containers work best; Windows containers have limitations.
+  2.Setting up communication between containers can be tricky.
+  3.Doesn’t virtualize hardware, so some workloads may need VMs.
+  4.Beginners may find Docker commands and concepts confusing.
+
+7.Usecases :
+  1.Run multiple small apps in isolated containers (microservices).
+  2.Create consistent development and testing environments.
+  3.Automate app building, testing, and deployment (CI/CD).
+  4.Run scalable apps on cloud platforms.
+  5.Package old apps to run on modern systems (legacy apps).
+  6.Test new software without affecting your main system.
+

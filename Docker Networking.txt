@@ -1,0 +1,60 @@
+What is Docker Networking?
+  * Docker networking allows containers to communicate with each other and with the outside world.
+  * Every container is connected to a network, which defines how it can talk to other containers or the host system.
+
+Types of Docker Networks :
+  1.Bridge Network (Default)
+    * Default network for containers on a single host.
+    * Containers can communicate with each other using IP addresses or container names.
+    * Isolation from the host network.
+
+  2.Host Network
+    * Container shares the host’s network stack.
+    * No isolation; container uses the host’s IP address.
+    * Faster network performance, but less secure.
+ 
+  3.Overlay Network
+    * Connects containers across multiple Docker hosts.
+    * Used in Docker Swarm or Kubernetes for distributed apps.
+
+  4.Macvlan Network
+    * Assigns a unique MAC address to a container.
+    * Makes the container appear as a physical device on the network.
+    * Useful for legacy apps that require direct L2 network access.
+
+  5.None Network
+    * Container has no network access.
+    * Completely isolated.
+
+
+Docker Networking Commands :
+    * docker network ls → List all networks.
+    * docker network create <name> → Create a new network.
+    * docker network inspect <network> → Show details of a network.
+    * docker network connect <network> <container> → Connect a container to a network.
+    * docker network disconnect <network> <container> → Disconnect a container from a network.
+    * docker network rm <network> → Remove a network.
+
+
+Docker Networking Workflow
+  1.Container Creation
+    * When a container is created (docker run), Docker assigns it to a default network (usually the bridge network) unless a specific network is specified.
+  2.IP Assignment
+    * Docker assigns the container a unique IP address within the network’s subnet.
+    * This IP is used for container-to-container communication.
+    * Container Communication
+    * Containers on the same network can communicate directly using:
+  3.IP addresses
+    * Container names (Docker automatically resolves names via DNS)
+  4.Port Mapping
+    * To communicate with the host machine or external world, Docker maps container ports to host ports using -p <host_port>:<container_port>.
+  5.Custom Networks 
+    * You can create user-defined networks (docker network create) for better isolation and easier communication.
+    * Containers on the same custom network can communicate by name.
+  6.Multiple Host Communication
+    * Using overlay networks (for Docker Swarm or Kubernetes), containers across different hosts can communicate as if they are on the same network.
+  7.Network Management
+    * Docker allows dynamic management of networks:
+     * Connect/disconnect containers
+     * Inspect network details
+     * Remove unused networks
