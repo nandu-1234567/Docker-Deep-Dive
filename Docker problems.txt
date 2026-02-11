@@ -1,0 +1,18 @@
+Problem Docker Solves :
+
+Docker solves the common challenges developers face when building, shipping, and running applications:
+
+ 1. “It works on my machine” problem – Applications behave differently on different machines or environments.
+     Docker packages the app with all its dependencies, ensuring it runs the same everywhere.
+
+ 2. Dependency conflicts – Multiple applications may require different versions of libraries or runtimes. 
+     Docker isolates each app in its own container, preventing conflicts.
+
+ 3.Environment inconsistency – Differences between development, staging, and production can cause failures. 
+     Docker ensures a consistent environment across all stages.
+
+ 4.Complex setup – Installing databases, runtimes, and libraries manually is time-consuming and error-prone. 
+     Docker simplifies setup using pre-built images.
+
+ 5.Scalability and isolation – Running multiple apps on the same machine can be messy. 
+     Docker containers are lightweight and isolated, making scaling and management easier.
